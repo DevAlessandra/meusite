@@ -408,7 +408,7 @@ section.card {
 @media (max-width: 768px) {
  .skills-description {
   width: 100%;
-  gap: 150px;
+  gap: 100px;
 }
 
   .skills-list {
