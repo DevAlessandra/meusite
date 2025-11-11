@@ -18,8 +18,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  padding: 0 40px;
   min-height: 100vh;
+  margin: 0 5%;
 }
 
 /* HEADER */
@@ -103,6 +103,22 @@ nav a:hover {
   font-weight: bolder;
   line-height: 3.5rem;
 }
+.contato{
+  font-size: 1.2rem;
+}
+.projects{
+  font-size: 4.2rem;
+  font-weight: bolder;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+.description{
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  color: var(--font-color);
+  font-weight: 300;
+  text-align: justify;
+}
 
 /* Moldura com efeito flutuar */
 .frame {
@@ -169,6 +185,10 @@ button.outline:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+  }
+
   #hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -182,4 +202,229 @@ button.outline:hover {
     width: 260px;
     height: 260px;
   }
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* centraliza os cards */
+  margin-top: 20px;
+   flex-direction: row;
+}
+
+
+/* Card */
+section.card {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  background-color: #e24ad5ff;
+  border-radius: 10px;
+  border: 2px solid #da96d4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Deixe o vídeo visível dentro do card */
+.card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta e preenche o espaço */
+  border-radius: 10px;
+  transition: transform 0.6s ease;
+}
+
+/* Diminui o vídeo ao passar o mouse (para abrir espaço para o conteúdo) */
+.card:hover video {
+  transform: scale(1.1);
+  filter: brightness(50%); /* escurece levemente para o texto ficar legível */
+}
+
+/* Conteúdo sobreposto no hover */
+.card__content {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  background-color: rgba(226, 74, 213, 0.9); /* cor sem esconder totalmente o vídeo */
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  display: flex;
+  flex-direction: column; /* ⬅️ Corrigido! Agora o título e o texto ficam um abaixo do outro */
+  justify-content: center;
+  align-items: center; /* centraliza o conteúdo horizontalmente */
+  text-align: center;
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  padding-left: 5px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+}
+
+
+.card__description {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+
+.card__description {
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.4;
+  margin-top: 8px;
+}
+.card__button {
+ font-size: 14px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card__button:hover {
+  background-color: #e24ad5;
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.05);
+}
+/* ===================== */
+/* 🔹 RESPONSIVIDADE 🔹 */
+/* ===================== */
+
+/* Tablet: 2 cards por linha */
+@media (max-width: 1024px) {
+  .card {
+    width: 45%; /* ocupa quase metade da linha */
+    height: 200px;
+  }
+}
+
+/* Celular médio: 1 card por linha */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 55px;
+  }
+
+  .card {
+    width: 90%;
+    height: 180px;
+  }
+
+  .card__title {
+    font-size: 1.2rem;
+  }
+
+  .card__description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Celulares pequenos (menos de 400px) */
+@media (max-width: 400px) {
+  .card {
+    width: 100%;
+    height: 160px;
+  }
+
+  .card__title {
+    font-size: 1rem;
+  }
+
+  .card__description {
+    font-size: 0.85rem;
+  }
+}
+.description{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--font-color);
+  font-weight: 300;
+  text-align: justify;
+}
+
+
+
+//* =============================== */
+/*   BLOCO DE SKILLS — FORÇADO    */
+/* =============================== */
+.skill-container{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+.skills-description {
+  display: flex !important; /* força o grid mesmo se houver conflito */
+  flex-wrap: wrap;
+  align-items: start;
+  width: 100%;
+  gap: 120px;
+}
+
+/* Cada bloco de skill */
+.skills-list {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #111;
+  flex-direction: row;
+  text-align: center;
+}
+
+/* Itens dentro de cada bloco */
+.skills-list p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #444;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+/* Efeito hover */
+.skills-list p:hover {
+  color: #e24ad5;
+  transition: color 0.3s ease;
+}
+
+/* Responsivo automático com grid */
+@media (max-width: 768px) {
+  .skills-description {
+    gap: 24px;
+  }
+
+  .skills-list {
+    text-align: left;
+  }
+}
+footer {
+  display: flex; /* ativa o flexbox */
+  flex-direction: column; /* empilha o conteúdo verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+  justify-content: center; /* centraliza verticalmente */
+  text-align: center;
+
+  background-color: #f7c9f3; /* rosa claro */
+  color: #1f1e1e; /* texto escuro para contraste */
+
+  margin-top: 4rem;
+
+  border-top: 1px solid #ddd;
 }
