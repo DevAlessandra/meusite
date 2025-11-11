@@ -406,9 +406,10 @@ section.card {
 
 /* Responsivo automático com grid */
 @media (max-width: 768px) {
-  .skills-description {
-    gap: 24px;
-  }
+ .skills-description {
+  width: 100%;
+  gap: 150px;
+}
 
   .skills-list {
     text-align: left;
