@@ -407,7 +407,7 @@ section.card {
 /* Responsivo automático com grid */
 @media (max-width: 768px) {
  .skills-description {
-  width: 100%;
+  width: 90%;
   gap: 70px;
 }
 
@@ -415,6 +415,13 @@ section.card {
     text-align: left;
   }
 }
+@media (max-width: 500px) {
+.skills-description {
+  width: 90%;
+  gap: 70px;
+}
+}
+
 footer {
   display: flex; /* ativa o flexbox */
   flex-direction: column; /* empilha o conteúdo verticalmente */
