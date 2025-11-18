@@ -378,7 +378,7 @@ section.card {
   align-items: center;
   justify-content: center;
   width: 100%;
-  gap: 250px;
+  gap: 100px;
 }
 
 /* Cada bloco de skill */
@@ -409,7 +409,7 @@ section.card {
 @media (max-width: 768px) {
  .skills-description {
   width: 90%;
-  gap: 70px;
+  gap: 30px;
 }
 
   .skills-list {
